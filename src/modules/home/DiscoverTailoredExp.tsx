@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const DiscoverTailoredExp = () => {
+const DiscoverTailoredExp: React.FC = () => {
   return (
     <section className="p-4 lg:py-0 mt-[54px] lg:mt-[72px] w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 space-y-4">
       <div className="relative w-full lg:w-1/2 max-h-[188px] lg:max-h-64 aspect-square">
-        <Image src="/tailored-exp.png" alt="tailored-exp" fill />
+        <Image
+          src="/tailored-exp.png"
+          alt="tailored-exp"
+          fill
+          style={{ objectFit: "cover" }}
+          className="object-center transition-opacity ease-in-out duration-300 opacity-100"
+          loading="lazy"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className="lg:w-1/2 flex flex-col lg:justify-center space-y-2 lg:space-y-4 text-center lg:text-left">
         <h1 className="m-0 text-dark-teal text-[32px] font-bold">

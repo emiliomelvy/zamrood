@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section className="bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.png')] py-20">
       <div className="px-4 py-52 w-full max-w-7xl mx-auto text-center lg:text-left">
