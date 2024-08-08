@@ -6,6 +6,19 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
+type SrcSetType = {
+  src: string;
+  width: number;
+  height: number;
+};
+
+type ImageType = {
+  src: string;
+  width: number;
+  height: number;
+  srcSet: SrcSetType[];
+};
+
 const IMAGES = [
   { src: "/1.png", width: 1920, height: 1080 },
   { src: "/2.png", width: 1920, height: 1080 },
@@ -15,31 +28,30 @@ const IMAGES = [
   { src: "/6.png", width: 1920, height: 1080 },
 ];
 
-const imageSizes = [16, 32, 48, 64, 96, 128, 256, 384];
-const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
+const imageSizes: number[] = [16, 32, 48, 64, 96, 128, 256, 384];
+const deviceSizes: number[] = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
 
-const nextImageUrl = (src: string, size: number) => {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${size}&q=75`;
-};
-
-const slides = IMAGES.map(({ src, width, height }) => ({
-  width,
-  height,
-  src: src,
-  srcSet: imageSizes
-    .concat(...deviceSizes)
-    .filter((size) => size <= width)
-    .map((size) => ({
-      src: src,
-      width: size,
-      height: Math.round((height / width) * size),
-    })),
-}));
+const slides = IMAGES.map(
+  ({ src, width, height }): ImageType => ({
+    width,
+    height,
+    src: src,
+    srcSet: imageSizes
+      .concat(...deviceSizes)
+      .filter((size) => size <= width)
+      .map((size) => ({
+        src: src,
+        width: size,
+        height: Math.round((height / width) * size),
+      })),
+  })
+);
 
 const LuxuryFootages: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImage, setCurrentImage] = useState<number>(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % IMAGES.length);
