@@ -9,7 +9,7 @@ type Sidebar = {
   link: string;
 };
 
-const sideBar: Sidebar[] = [
+const SIDEBAR: Sidebar[] = [
   {
     name: "Homepage",
     link: "/",
@@ -84,7 +84,7 @@ const Header = () => {
                 />
               </div>
               <div className="mt-[156px] flex flex-col space-y-6">
-                {sideBar.map((item, index) => (
+                {SIDEBAR.map((item, index) => (
                   <Link
                     key={index}
                     href={item.link}
