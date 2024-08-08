@@ -55,12 +55,6 @@ const fetchItinerary = async (): Promise<ApiResponse> => {
   return response.json();
 };
 
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
-
 const Destinations: React.FC = () => {
   const { isLoading, isError, error, data } = useQuery<ApiResponse, Error>({
     queryKey: ["destinations"],
@@ -103,7 +97,13 @@ const Destinations: React.FC = () => {
 };
 
 const ItineraryComponent: React.FC<{ item: Itinerary }> = ({ item }) => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  });
+
+  const [currentImage, setCurrentImage] = useState<number>(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(
@@ -152,7 +152,6 @@ const ItineraryComponent: React.FC<{ item: Itinerary }> = ({ item }) => {
               Start from
             </span>
             <span className="text-left font-unbounded text-dark-teal text-lg lg:text-[28px] font-medium">
-              IDR{" "}
               {formatter.format(
                 Number(item.related_variant.itinerary_variant_pub_price)
               )}

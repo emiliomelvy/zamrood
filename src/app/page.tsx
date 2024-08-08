@@ -6,6 +6,8 @@ import DiscoverTailoredExp from "@/modules/home/DiscoverTailoredExp";
 import Separator from "@/modules/home/Separator";
 import Destinations from "@/modules/home/Destinations";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ExploreMore from "@/modules/home/ExploreMore";
+import LuxuryFootages from "@/modules/home/LuxuryFootages";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,8 @@ export default function Home() {
         <DiscoverTailoredExp />
         <Separator />
         <Destinations />
+        <ExploreMore />
+        <LuxuryFootages />
       </main>
     </QueryClientProvider>
   );
