@@ -31,14 +31,16 @@ const BeyondPremium: React.FC = () => {
   return (
     <section className="p-4 lg:py-0 mt-[54px] lg:my-[72px] w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-stretch gap-4 lg:gap-6">
       <div className="col-span-full text-center">
-        {/* font-the-signature text-[54px] */}
-        <h1 className="text-dark-aquaman text-2xl lg:text-[85px]">
+        <h1
+          className="font-the-signature text-dark-aquaman text-2xl lg:text-[85px] text-[54px]"
+          style={{ lineHeight: "normal" }}
+        >
           Beyond Premium
         </h1>
-        {/* font-unbounded */}
-        <div className="text-dark-teal font-bold text-[22px] lg:text-[32px]">
+
+        <span className="font-unbounded text-dark-teal font-bold uppercase text-[22px] lg:text-[32px]">
           Elevate Your Experience
-        </div>
+        </span>
       </div>
       {BEYOND_PREMIUM.map((item, key) => {
         return (

@@ -20,6 +20,10 @@ const config: Config = {
         tan: "#d1b775",
         "vista-white": "#faf9f5",
       },
+      fontFamily: {
+        unbounded: ["unbounded"],
+        "the-signature": ["the-signature"],
+      },
     },
   },
   plugins: [],

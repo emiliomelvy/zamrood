@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
-      <main>
+      <>
         <Hero />
         <BeyondPremium />
         <DiscoverTailoredExp />
@@ -26,7 +26,7 @@ export default function Home() {
         <LuxuryFootages />
         <Website />
         <Articles />
-      </main>
+      </>
     </QueryClientProvider>
   );
 }

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import url("./styles/stylesheet.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
