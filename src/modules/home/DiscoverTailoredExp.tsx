@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 const DiscoverTailoredExp: React.FC = () => {
   return (
-    <section className="p-4 lg:py-0 mt-[54px] lg:mt-[72px] w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 space-y-4">
+    <section
+      id="discover-tailored-experiences"
+      className="p-4 lg:py-0 mt-[54px] lg:mt-[72px] w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 space-y-4"
+    >
       <div className="relative w-full lg:w-1/2 max-h-[188px] lg:max-h-64 aspect-square">
         <Image
           src="/tailored-exp.png"

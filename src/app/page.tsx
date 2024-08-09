@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ExploreMore from "@/modules/home/ExploreMore";
 import LuxuryFootages from "@/modules/home/LuxuryFootages";
 import Website from "@/modules/home/Website";
+import Articles from "@/modules/home/Articles";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ export default function Home() {
         <ExploreMore />
         <LuxuryFootages />
         <Website />
+        <Articles />
       </main>
     </QueryClientProvider>
   );

@@ -38,9 +38,9 @@ const Website: React.FC = () => {
               <path
                 d="M5 16.013L15.8333 5.17969M15.8333 5.17969V15.5797M15.8333 5.17969H5.43333"
                 stroke="#FAF9F5"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </Link>
