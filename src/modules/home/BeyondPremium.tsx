@@ -31,10 +31,7 @@ const BeyondPremium: React.FC = () => {
   return (
     <section className="p-4 lg:py-0 mt-[54px] lg:my-[72px] w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-stretch gap-4 lg:gap-6">
       <div className="col-span-full text-center">
-        <h1
-          className="font-the-signature text-dark-aquaman text-2xl lg:text-[85px] text-[54px]"
-          style={{ lineHeight: "normal" }}
-        >
+        <h1 className="font-the-signature text-dark-aquaman text-2xl lg:text-[85px] text-[54px] leading-normal">
           Beyond Premium
         </h1>
 

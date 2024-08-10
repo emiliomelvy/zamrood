@@ -92,6 +92,42 @@ const Destinations: React.FC = () => {
           <ItineraryComponent key={item.itinerary_id} item={item} />
         ))}
       </div>
+      <div>
+        {data?.data.slice(0, 1).map((item) => (
+          <div
+            key={item.itinerary_id}
+            className="lg:grid grid-cols-12 gap-6 pt-20 lg:pt-10"
+          >
+            {item.related_galleries.slice(0, 4).map((image, index) => (
+              <div
+                key={index}
+                className={`col-span-3 ${index > 0 && "hidden lg:block"}`}
+              >
+                <div key={image.gallery_id} className="col-span-3">
+                  <Image
+                    src={image.src}
+                    alt={image.gallery_alt_text}
+                    width={256}
+                    height={256}
+                    className="w-full"
+                  />
+                </div>
+                <div className="pt-5 col-span-3">
+                  <div className="text-dark-teal text-xs">
+                    {item.itinerary_day} DAYS {item.itinerary_day - 1} NIGHTS
+                  </div>
+                  <strong className="text-dark-aquaman font-unbounded">
+                    {item.itinerary_name}
+                  </strong>
+                  <div className="font-bold text-dark-teal">
+                    Organized by {item.partner_name}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
@@ -127,7 +163,8 @@ const ItineraryComponent: React.FC<{ item: Itinerary }> = ({ item }) => {
               index === currentImage ? "opacity-100" : "opacity-0"
             }`}
             loading="lazy"
-            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            // sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="33vw"
           />
         ))}
       </div>
@@ -157,6 +194,12 @@ const ItineraryComponent: React.FC<{ item: Itinerary }> = ({ item }) => {
               )}
             </span>
           </div>
+          <Link
+            href="/"
+            className="text-center inline-flex justify-center items-center px-6 py-2.5 rounded-full capitalize font-bold text-sm lg:text-base transition-colors ease-in-out duration-300 bg-transparent text-dark-teal border-2 border-dark-teal hover:bg-dark-teal hover:text-vista-white hover:border-dark-teal "
+          >
+            See Details
+          </Link>
         </div>
       </div>
     </div>

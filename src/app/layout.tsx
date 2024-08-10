@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
+import { Albert_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// const inter = Inter({ subsets: ["latin"] });
+
+const albertSans = Albert_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Zamrood by Pandooin | Premium Travel Experiences in Indonesia",
@@ -17,9 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* className={inter.className} */}
-      <body>
+    <html lang="en" className="scroll-smooth">
+      <body className={albertSans.className}>
         <Header />
         <main>{children}</main>
         <Footer />

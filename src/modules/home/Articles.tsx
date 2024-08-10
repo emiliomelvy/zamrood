@@ -64,6 +64,7 @@ const Articles: React.FC = () => {
                 style={{ objectFit: "cover" }}
                 loading="lazy"
                 className="object-cover object-center grayscale hover:grayscale-0 transition-all ease-in-out duration-300"
+                sizes="33vw"
               />
             </div>
             <div className="w-full p-6 lg:p-4 bg-dark-aquaman flex flex-col space-y-2">
