@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Albert_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 
 const albertSans = Albert_Sans({ subsets: ["latin"] });
 
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
   description:
     "Experience the finest that Indonesia has to offer with Zamrood's curated selection of premium trips, ensuring comfort every step of the way.",
 };
+
+const Header = dynamic(() => import("@/components/Header"), { ssr: false });
 
 export default function RootLayout({
   children,

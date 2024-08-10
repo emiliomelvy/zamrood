@@ -30,7 +30,6 @@ const NAVIGATIONS: Navigation[] = [
 
 const HeaderDesktop: React.FC = () => {
   const [name, setName] = useState<string>("Homepage");
-
   const [y, setY] = useState(window.scrollY);
 
   const handleNavigation = useCallback(
